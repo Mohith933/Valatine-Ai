@@ -53,7 +53,10 @@
        cursor: pointer;
        transition: background 0.3s ease;
    }
-
+.btn a{
+  color:white;
+  text-decoration:none;
+}
    .btn:hover {
        background: #e33c66;
    }
@@ -309,5 +312,6 @@
   .chat-window{
     width:90%;
   }
+
 
 }
