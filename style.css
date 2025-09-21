@@ -536,7 +536,8 @@
   }
   .chat-window {
     width: 90%;
-    max-height: 65vh;
+    max-height: 55vh;
   }
 }
+
 
