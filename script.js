@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // UI tweaks after first message
     hero.style.display = "none";
+    chatWindow.style.marginTop = "20px";
     inputArea.style.position = "fixed";
     inputArea.style.bottom = "40px";
     inputArea.style.left = "50%";
@@ -323,5 +324,6 @@ function loadRecents() {
     });
   }
 }
+
 
 
