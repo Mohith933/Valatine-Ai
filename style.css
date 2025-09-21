@@ -399,7 +399,7 @@
    .sidebar.open~.navbars,
    .sidebar.open~.footer,
    .sidebar.open~.avatar {
-     margin-left: 220px;
+     margin-left: 210px;
      margin-right: 0px;
    }
 
@@ -536,5 +536,7 @@
   }
   .chat-window {
     width: 90%;
+    max-height: 65vh;
   }
 }
+
