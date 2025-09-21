@@ -523,7 +523,7 @@
 
   .input-box {
     width: 90%;
-    height:100px;
+    height:90px;
     font-size: 14px;
     padding: 10px;
     border-radius: 15px;
@@ -538,6 +538,7 @@
     width: 95%;
   }
 }
+
 
 
 
