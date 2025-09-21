@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // UI tweaks after first message
     hero.style.display = "none";
     inputArea.style.position = "fixed";
-    inputArea.style.bottom = "50px";
+    inputArea.style.bottom = "40px";
     inputArea.style.left = "50%";
     inputArea.style.transform = "translateX(-50%)";
     footer.style.marginTop = "0px";
@@ -323,4 +323,5 @@ function loadRecents() {
     });
   }
 }
+
 
