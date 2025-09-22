@@ -537,10 +537,9 @@
   .chat-window {
     width: 95%;
     max-height:70dvh;
-    padding-bottom:16px;
-    -webkit-overflow-scrolling: touch;
   }
 }
+
 
 
 
