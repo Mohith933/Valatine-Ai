@@ -536,10 +536,12 @@
   }
   .chat-window {
     width: 95%;
-    max-height:75dvh;
-    padding-bottom:16px;
+    max-height: 75dvh; /* dynamic vh = fixes GitHub Pages issue */
+    padding-bottom: 20px; /* extra space so last line never hides */
+    -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
   }
 }
+
 
 
 
