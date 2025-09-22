@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
     footer.style.fontSize = "12px";
     footer.innerHTML = "Valatine Ai can make mistakes. Check important info.";
   }
+  function resizeChatWindow() {
+    const chatWindow = document.querySelector(".chat-window");
+    if (chatWindow) {
+      // Use the real innerHeight (works when keyboard shows up)
+      chatWindow.style.maxHeight = (window.innerHeight * 0.7) + "px";
+    }
+  }
+
+  // Call on load and resize
+  window.addEventListener("load", resizeChatWindow);
+  window.addEventListener("resize", resizeChatWindow);
+  
   // Show messages inside chat window
   function addMessageToChat(message) {
     // User message
@@ -323,6 +335,7 @@ function loadRecents() {
     });
   }
 }
+
 
 
 
