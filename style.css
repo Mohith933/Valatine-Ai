@@ -536,8 +536,11 @@
   }
   .chat-window {
     width: 95%;
+    max-height: 100%;
+    padding-bottom: 10px;
   }
 }
+
 
 
 
