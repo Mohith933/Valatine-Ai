@@ -148,8 +148,7 @@
      flex-direction: column;
      overflow-y: auto;
      scroll-behavior: smooth;
-     max-height: 100vh;
-     padding-bottom:100px;
+     max-height: 75vh;
      flex-grow: 1;
      background-color: #9b1c3c;
    }
@@ -542,6 +541,7 @@
     -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
   }
 }
+
 
 
 
