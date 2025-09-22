@@ -148,7 +148,8 @@
      flex-direction: column;
      overflow-y: auto;
      scroll-behavior: smooth;
-     max-height: 70vh;
+     max-height: 100vh;
+     padding-bottom:100px;
      flex-grow: 1;
      background-color: #9b1c3c;
    }
@@ -536,10 +537,12 @@
   }
   .chat-window {
     width: 95%;
-    padding-bottom: 20px; /* extra space so last line never hides */
+    max-weight:75dvh;
+    padding-bottom: 30px; /* extra space so last line never hides */
     -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
   }
 }
+
 
 
 
