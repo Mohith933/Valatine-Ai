@@ -29,7 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // UI tweaks after first message
     hero.style.display = "none";
+    
     inputArea.style.position = "fixed";
+    chatWindow.style.marginTop = "20px";
     inputArea.style.bottom = "40px";
     inputArea.style.left = "50%";
     inputArea.style.transform = "translateX(-50%)";
@@ -263,12 +265,12 @@ function typeText(element, htmlContent, speed = 30) {
     const isLandscape = viewportWidth > viewportHeight;
 
     // Adjust send button position and input width based on viewport size
-    if (viewportWidth <= 360) {
+    if (viewportWidth <= 420) {
       sendBtn.style.right = isLandscape ? "50px" : "20px";
       inputArea.style.width = "90%";
-    } else if (viewportWidth <= 900) {
+    } else if (viewportWidth <= 1024) {
       sendBtn.style.right = isLandscape ? "60px" : "30px";
-      inputArea.style.width = "90%";
+      inputArea.style.width = "80%";
     } else {
       sendBtn.style.right = "40px"; // Reset width for larger screens
       inputArea.style.width = "50%";
@@ -324,6 +326,7 @@ function loadRecents() {
     });
   }
 }
+
 
 
 
