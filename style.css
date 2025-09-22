@@ -148,7 +148,7 @@
      flex-direction: column;
      overflow-y: auto;
      scroll-behavior: smooth;
-     max-height: 75vh;
+     max-height: 70vh;
      flex-grow: 1;
      background-color: #9b1c3c;
    }
@@ -536,11 +536,12 @@
   }
   .chat-window {
     width: 95%;
-    max-height: 75dvh; /* dynamic vh = fixes GitHub Pages issue */
+    max-height: 70dvh; /* dynamic vh = fixes GitHub Pages issue */
     padding-bottom: 20px; /* extra space so last line never hides */
     -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
   }
 }
+
 
 
 
