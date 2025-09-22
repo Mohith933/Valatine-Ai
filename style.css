@@ -541,6 +541,44 @@
     -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar.open ~ .hero,
+  .sidebar.open ~ .navbars,
+  .sidebar.open ~ .footer,
+  .sidebar.open ~ .avatar,
+  .sidebar.open ~ .input-box,
+  .sidebar.open ~ .chat-window {
+    margin-left: 200px; /* allow sidebar space */
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+  .navbars {
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .input-box {
+    width: 80%;
+    height: 120px;
+    font-size: 15px;
+  }
+  .input-box .chatbox {
+    height: 100px;
+  }
+  .chat-window {
+    width: 80%;
+    max-height: 80dvh;
+    padding-bottom:40px;
+  }
+}
 
 
 
