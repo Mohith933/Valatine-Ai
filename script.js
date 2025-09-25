@@ -283,10 +283,7 @@ async function generateAIResponse(userMessage) {
   }
 
   return response;
-                                                                                   }
-}
-
-
+    }
   // Adjust layout for different screens
   function adjustLayoutForViewport() {
     const viewportWidth = window.innerWidth;
@@ -355,6 +352,7 @@ function loadRecents() {
     });
   }
 }
+
 
 
 
