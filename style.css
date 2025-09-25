@@ -228,6 +228,39 @@
      color: #fff;
      font-weight: 500;
    }
+.ai-message table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  background-color: #fffafc;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ai-message th,
+.ai-message td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #f2dede;
+}
+
+.ai-message th {
+  background-color: #ffe4ec;
+  color: #d6336c;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ai-message tr:hover {
+  background-color: #fff0f5;
+}
+
+.ai-message td {
+  color: #5c2c3d;
+}
 
    .avatar-dropdown {
      position: fixed;
