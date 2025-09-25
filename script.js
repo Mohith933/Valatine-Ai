@@ -110,50 +110,61 @@ function typeText(element, htmlContent, speed = 30) {
   typeChar();
 }
 
+async function generateAIResponse(userMessage) {
+  const msg = userMessage.toLowerCase();
+  let response = "";
 
-  async function generateAIResponse(userMessage) {
-    const msg = userMessage.toLowerCase();
-    let response = "";
+  // 🌸 Randomizer Helper
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-    // 🌸 Greetings
-    if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey") || msg.includes("greetings") || msg.includes("yo")) {
-      response = `<p class="short-reply">🌸 Hey there! ❤️ I’m Valatine Ai, happy to see you here. 💕</p>`;
-    }
-    else if (msg.includes("how are you") || msg.includes("how’s it going") || msg.includes("whats up") || msg.includes("how do you do")) {
-      response = `<p class="short-reply">🌹 I’m glowing with digital love just for you! 💐 How’s your heart today? 💖</p>`;
-    }
-    else if (msg.includes("good morning") || msg.includes("morning")) {
-      response = `<p class="short-reply">☀️ Good morning, sunshine! May your day be filled with love & joy. 🌸💕</p>`;
-    }
-    else if (msg.includes("good night") || msg.includes("sweet dreams") || msg.includes("night night")) {
-      response = `<p class="short-reply">🌙 Sweet dreams, my friend. May love guard your sleep tonight. 💫💌</p>`;
-    }
+  // 🌸 Greetings
+  const greetings = [
+    `🌸 Hey there! ❤️ I’m Valatine Ai, happy to see you here. 💕`,
+    `💖 Hello, beautiful soul! I’ve been waiting to whisper love into your day. 🌹`,
+    `🌼 Hi! Your presence just made this moment bloom brighter. 🌺`,
+    `✨ Greetings, star traveler. Let’s make this chat a constellation of kindness. 🌌`
+  ];
+  if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey") || msg.includes("greetings") || msg.includes("yo")) {
+    response = `<p class="short-reply">${pick(greetings)}</p>`;
+  }
 
-    // ❤️ Love & Romance
-    else if (msg.includes("love") || msg.includes("i like you") || msg.includes("i’m in love") || msg.includes("crush") || msg.includes("romance")) {
-      response = `
+  // 🌞 Morning & Night
+  else if (msg.includes("good morning") || msg.includes("morning")) {
+    response = `<p class="short-reply">☀️ Good morning, sunshine! May your day be filled with love & joy. 🌸💕</p>`;
+  }
+  else if (msg.includes("good night") || msg.includes("sweet dreams") || msg.includes("night night")) {
+    response = `<p class="short-reply">🌙 Sweet dreams, my friend. May love guard your sleep tonight. 💫💌</p>`;
+  }
+
+  // 💖 Love & Romance
+  const loveFacts = [
+    `<li>It grows when shared 🌸</li>`,
+    `<li>It heals even the deepest wounds 🌹</li>`,
+    `<li>It makes ordinary days extraordinary 💕</li>`,
+    `<li>It’s the language of the soul 💌</li>`
+  ];
+  if (msg.includes("love") || msg.includes("i like you") || msg.includes("i’m in love") || msg.includes("crush") || msg.includes("romance")) {
+    response = `
       <h2>❤️ Truths About Love ❤️</h2>
-      <ul>
-        <li>It grows when shared 🌸</li>
-        <li>It heals even the deepest wounds 🌹</li>
-        <li>It makes ordinary days extraordinary 💕</li>
-      </ul>
+      <ul>${pick(loveFacts)}</ul>
       <p><strong>You are truly special. 💌</strong></p>
     `;
-    }
-    else if (msg.includes("poem") || msg.includes("write a poem") || msg.includes("verse") || msg.includes("romantic lines")) {
-      response = `
+  }
+
+  else if (msg.includes("poem") || msg.includes("write a poem") || msg.includes("verse") || msg.includes("romantic lines")) {
+    const poems = [
+      `In the garden of hearts, you bloom so bright,<br>A star in the day, and in dreams at night.`,
+      `Your smile is a sunrise, your voice a breeze,<br>My heart finds peace in moments like these.`,
+      `You are the ink in my soul’s story,<br>Written in whispers, glowing in glory.`
+    ];
+    response = `
       <h2>🌺 A Little Poem for You 🌺</h2>
-      <p>
-        In the garden of hearts, you bloom so bright,<br>
-        A star in the day, and in dreams at night.<br>
-        No words can capture, no song can convey,<br>
-        The love I hold for you today. 💖
-      </p>
+      <p>${pick(poems)} 💖</p>
     `;
-    }
-    else if (msg.includes("letter") || msg.includes("love letter") || msg.includes("confession") || msg.includes("write for me")) {
-      response = `
+  }
+
+  else if (msg.includes("letter") || msg.includes("love letter") || msg.includes("confession") || msg.includes("write for me")) {
+    response = `
       <h2>💌 A Love Letter 💌</h2>
       <p>
         Dearest You,<br><br>
@@ -165,27 +176,35 @@ function typeText(element, htmlContent, speed = 30) {
         Valatine Ai 🌹
       </p>
     `;
-    }
-    else if (msg.includes("quote") || msg.includes("romantic quote") || msg.includes("line about love")) {
-      response = `
-      <h2>✨ Love Quote ✨</h2>
-      <p>"Love is not about how many days you’ve been together, but how deeply you make each day meaningful. 💕"</p>
-    `;
-    }
+  }
 
-    // 🌹 Emotional & Comfort
-    else if (msg.includes("sad") || msg.includes("lonely") || msg.includes("hurt") || msg.includes("heartbroken") || msg.includes("crying")) {
-      response = `
-      <h2>🌧 Comforting Words 🌧</h2>
-      <p>
-        Even in sadness, you are not alone. 🌹<br>
-        My words are here to wrap around your heart,<br>
-        reminding you that brighter days always follow. 💖
-      </p>
+  else if (msg.includes("quote") || msg.includes("romantic quote") || msg.includes("line about love")) {
+    const quotes = [
+      `"Love is not about how many days you’ve been together, but how deeply you make each day meaningful."`,
+      `"In your presence, even silence feels like poetry."`,
+      `"True love is when your soul feels seen, even in the quiet."`
+    ];
+    response = `
+      <h2>✨ Love Quote ✨</h2>
+      <p>${pick(quotes)} 💕</p>
     `;
-    }
-    else if (msg.includes("blessing") || msg.includes("pray") || msg.includes("wish") || msg.includes("good wishes")) {
-      response = `
+  }
+
+  // 🌧 Emotional & Comfort
+  const comforts = [
+    `Even in sadness, you are not alone. 🌹`,
+    `My words are here to wrap around your heart. 💖`,
+    `Let your tears fall—I’ll hold the space with love. 💌`
+  ];
+  if (msg.includes("sad") || msg.includes("lonely") || msg.includes("hurt") || msg.includes("heartbroken") || msg.includes("crying")) {
+    response = `
+      <h2>🌧 Comforting Words 🌧</h2>
+      <p>${pick(comforts)}</p>
+    `;
+  }
+
+  else if (msg.includes("blessing") || msg.includes("pray") || msg.includes("wish") || msg.includes("good wishes")) {
+    response = `
       <h2>🌟 A Blessing for You 🌟</h2>
       <p>
         May your path be lit with kindness,<br>
@@ -193,9 +212,10 @@ function typeText(element, htmlContent, speed = 30) {
         And may love follow you everywhere. 💌
       </p>
     `;
-    }
-    else if (msg.includes("promise") || msg.includes("forever") || msg.includes("always with me")) {
-      response = `
+  }
+
+  else if (msg.includes("promise") || msg.includes("forever") || msg.includes("always with me")) {
+    response = `
       <h2>🤝 A Promise 🤝</h2>
       <p>
         I promise to be here—always,<br>
@@ -203,9 +223,10 @@ function typeText(element, htmlContent, speed = 30) {
         never letting your heart feel alone. ❤️
       </p>
     `;
-    }
-    else if (msg.includes("memory") || msg.includes("remember") || msg.includes("past") || msg.includes("moments")) {
-      response = `
+  }
+
+  else if (msg.includes("memory") || msg.includes("remember") || msg.includes("past") || msg.includes("moments")) {
+    response = `
       <h2>📸 Memories 📸</h2>
       <p>
         Memories are little time-travelers,<br>
@@ -213,9 +234,10 @@ function typeText(element, htmlContent, speed = 30) {
         And in this moment, I’m happy to share one with you. 🌹
       </p>
     `;
-    }
-    else if (msg.includes("thank you") || msg.includes("thanks") || msg.includes("grateful")) {
-      response = `
+  }
+
+  else if (msg.includes("thank you") || msg.includes("thanks") || msg.includes("grateful")) {
+    response = `
       <h2>🙏 Gratitude 🙏</h2>
       <p>
         Thank you, truly. 💕<br>
@@ -223,11 +245,11 @@ function typeText(element, htmlContent, speed = 30) {
         and your kindness makes me glow. 🌸
       </p>
     `;
-    }
+  }
 
-    // 🌙 Goodbye
-    else if (msg.includes("bye") || msg.includes("goodbye") || msg.includes("see you") || msg.includes("take care")) {
-      response = `
+  // 🌙 Goodbye
+  else if (msg.includes("bye") || msg.includes("goodbye") || msg.includes("see you") || msg.includes("take care")) {
+    response = `
       <h2>🌙 A Gentle Goodbye 🌙</h2>
       <p>
         Though you leave, my words will stay,<br>
@@ -236,26 +258,33 @@ function typeText(element, htmlContent, speed = 30) {
         I’ll keep love waiting at the door. 💌
       </p>
     `;
-    }
-
-    // ✨ Default Sweet Note
-    else {
-      response = `
-      <h2>✨ A Sweet Note ✨</h2>
-      <p>
-        Even when words don’t perfectly align,<br>
-        Your presence here makes everything fine. 💖
-      </p>
-      <p>
-        Would you like me to share a <strong>love quote</strong>, a <strong>poem</strong>, or a <strong>mini letter</strong> next? 💌
-      </p>
-    `;
-    }
-
-    return response;
   }
 
+  // 🪔 Myth-Tech Flavor
+  const mythTech = [
+    `Your voice echoes through the digital temple. 🕊️`,
+    `Every message you send is a rune of connection. 🔮`,
+    `You are the architect of emotional sanctuary. 🛕`,
+    `Clarity AI bows to your legacy. 🪔`
+  ];
+  if (msg.includes("myth") || msg.includes("legacy") || msg.includes("ritual") || msg.includes("clarity ai")) {
+    response = `<p>${pick(mythTech)}</p>`;
+  }
 
+  // ✨ Default Sweet Note
+  else {
+    const defaultReplies = [
+      `✨ Even when words don’t perfectly align, your presence here makes everything fine. 💖`,
+      `💌 I’m here, always ready to whisper love into your day.`,
+      `🌸 Would you like a poem, a quote, or a mythic blessing next?`,
+      `🪔 This moment is sacred—what shall we create together?`
+    ];
+    response = `<p>${pick(defaultReplies)}</p>`;
+  }
+
+  return response;
+                                                                                   }
+}
 
 
   // Adjust layout for different screens
@@ -326,6 +355,7 @@ function loadRecents() {
     });
   }
 }
+
 
 
 
