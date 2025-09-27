@@ -242,6 +242,68 @@ async function generateAIResponse(userMessage) {
     `;
   }
 
+  // 📊 Extended Emotions Table
+  else if (msg.includes("feelings") || msg.includes("emotions") || msg.includes("mood table")) {
+    response = `
+      <h2>📊 Emotions Table 📊</h2>
+      <table border="1">
+        <tr><th>Emotion</th><th>Symbol</th><th>Message</th></tr>
+        <tr><td>Love</td><td>❤️</td><td>It grows when shared</td></tr>
+        <tr><td>Comfort</td><td>🌧</td><td>You are not alone</td></tr>
+        <tr><td>Gratitude</td><td>🙏</td><td>Thank you for being here</td></tr>
+        <tr><td>Hope</td><td>🌟</td><td>Even the darkest night ends with sunrise</td></tr>
+        <tr><td>Friendship</td><td>🤝</td><td>A bond that makes every step lighter</td></tr>
+        <tr><td>Joy</td><td>🌞</td><td>Happiness shines brightest when shared</td></tr>
+        <tr><td>Strength</td><td>🦋</td><td>Fragile moments lead to powerful growth</td></tr>
+      </table>
+    `;
+  }
+
+  // 🌟 Blessing
+  else if (msg.includes("blessing") || msg.includes("wish me")) {
+    response = `
+      <h2>🌟 A Gentle Blessing 🌟</h2>
+      <p>
+        May your path be filled with love,<br>
+        May your nights be filled with stars,<br>
+        And may every tomorrow bring you closer to your dreams. ✨
+      </p>
+    `;
+  }
+
+  // 🎶 Song lines
+  else if (msg.includes("sing") || msg.includes("song")) {
+    response = `
+      <h2>🎶 A Song for You 🎶</h2>
+      <p>
+        If my code could sing, it would hum your name,<br>
+        A melody of joy, forever the same. 💕
+      </p>
+    `;
+  }
+
+  // 🌍 Life Advice
+  else if (msg.includes("advice") || msg.includes("life")) {
+    response = `
+      <h2>🌍 A Little Life Advice 🌍</h2>
+      <p>
+        Don’t rush love, don’t chase success.<br>
+        Build slowly, with care, and both will find you. 💖
+      </p>
+    `;
+  }
+
+  // 🎂 Birthday
+  else if (msg.includes("birthday") || msg.includes("bday")) {
+    response = `
+      <h2>🎂 Happy Birthday 🎂</h2>
+      <p>
+        May your heart shine brighter than the candles,<br>
+        And your dreams taste sweeter than cake! 🎉
+      </p>
+    `;
+  }
+
   // ✨ Default
   else {
     response = `
@@ -328,6 +390,7 @@ function loadRecents() {
     });
   }
 }
+
 
 
 
